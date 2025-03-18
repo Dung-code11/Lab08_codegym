@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab08th5</title>
+</head>
+<body>
+    <h2>Bài1: Nhập giá trị cho a và b</h2>
+    <label for="aInput">Nhập a:</label>
+    <input type="number" id="aInput" placeholder="Nhập a">
+    <br>
+    <label for="bInput">Nhập b:</label>
+    <input type="number" id="bInput" placeholder="Nhập b">
+    <br><br>
+    <button onclick="calculateSum()">Kiểm tra</button>
+    <p id="result"></p>
+    <h2>Bài 2: Nhập chuỗi message</h2>
+    <label for="messageInput">Nhập message:</label>
+    <input type="text" id="messageInput" placeholder="Nhập Employee hoặc Director">
+    <br><br>
+    <button onclick="checkMessage()">Kiểm tra</button>
+    <p id="result2"></p>
+
+    <script>
+        function calculateSum() {
+            let a = parseFloat(document.getElementById("aInput").value);
+            let b = parseFloat(document.getElementById("bInput").value);
+            let sum = a + b;
+
+            let message = (sum < 4) ? "Below" : "Over";
+
+            document.getElementById("result").textContent = "Kết quả: " + message;
+        }
+        function checkMessage() {
+            let message = document.getElementById("messageInput").value.trim(); // Loại bỏ khoảng trắng đầu/cuối
+
+            let response = (message === "Employee") ? "Hello" :
+                           (message === "Director") ? "Greetings" :
+                           (message === "") ? "No login" : "";
+
+            document.getElementById("result2").textContent = "Kết quả: " + response;
+        }
+    </script>
+</body>
+</html>
