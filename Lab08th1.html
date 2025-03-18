@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab08th1</title>
+</head>
+<body>
+    <script>
+        var year = parseInt(prompt("Nhập năm: "));
+        var namnhuan = false;
+
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    namnhuan = true;
+                }
+            } else {
+                namnhuan = true;
+            }
+        }
+
+        if (namnhuan) {
+            alert(year + " là năm nhuận.");
+        } else {
+            alert(year + " không phải là năm nhuận.");
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra năm nhuận</title>
+</head>
+<body>
+    <h2>Kiểm tra năm nhuận</h2>
+    <label for="yearInput">Nhập năm:</label>
+    <input type="number" id="yearInput" placeholder="Nhập năm">
+    <button onclick="checkLeapYear()">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+        function checkLeapYear() {
+            var year = parseInt(document.getElementById("yearInput").value);
+            var namnhuan = false;
+
+            if (!isNaN(year)) {
+                if (year % 4 == 0) {
+                    if (year % 100 == 0) {
+                        if (year % 400 == 0) {
+                            namnhuan = true;
+                        }
+                    } else {
+                        namnhuan = true;
+                    }
+                }
+
+                var resultText = namnhuan ? year + " là năm nhuận." : year + " không phải là năm nhuận.";
+                document.getElementById("result").textContent = resultText;
+            } else {
+                document.getElementById("result").textContent = "Vui lòng nhập một số hợp lệ.";
+            }
+        }
+    </script>
+</body>
+</html>
+
