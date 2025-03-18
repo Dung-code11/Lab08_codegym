@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab08th3</title>
+</head>
+<body>
+    <h2>Đăng nhập</h2>
+    <label>Tên Đăng Nhập</label>
+    <input type="text" id="username" name="username" placeholder="Tên Đăng Nhập">
+    <br>
+    <label>Mật Khẩu</label>
+    <input type="password" id="password" name="password" placeholder="Mật Khẩu">
+    <button onclick="checktk()">Đăng Nhập</button>
+    <p id="result"></p>
+    <script>
+        function checktk(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            if(username === 'Admin'){
+                if(password === 'TheMaster'){
+                    document.getElementById("result").innerHTML = "Welcome";
+                }
+                else if(password === null){
+                    document.getElementById("result").innerHTML = "Canceled";
+                }else{
+                    document.getElementById("result").innerHTML = "Wrong Password";
+                }
+            } else if(username === null){
+                document.getElementById("result").innerHTML = "Canceled";
+            }
+            else{
+                document.getElementById("result").innerHTML = "Tôi không biết bạn";
+            }
+            
+        }
+    </script>
+</body>
+</html>
