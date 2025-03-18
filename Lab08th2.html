@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab08th2</title>
+</head>
+<body>
+        <h2>Tên chính thức của javaScript là gì ?</h2>
+        <label for="inputkq">Nhập Kết Quả: </label>
+        <input type="text" id="inputkq" name="inputkq" placeholder="Nhập Kết Quả">
+        <button onclick="checkkq()">Kiểm Tra</button>
+        <p id="result"></p>
+        <script>
+            function checkkq(){
+                var inputkq = document.getElementById("inputkq").value;
+                if(inputkq == 'ECMAScript'){
+                    document.getElementById("result").innerHTML = "Đúng";
+                } else{
+                    document.getElementById("result").innerHTML = "Sai.Bạn không biết hả đó là ECMAScript !";
+                }
+            }
+        </script>
+</body>
+</html>
