@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab08th4</title>
+</head>
+<body>
+    <h2> Bài 1: Kiểm tra trình duyệt</h2>
+    <label for="browserInput">Nhập tên trình duyệt:</label>
+    <input type="text" id="browserInput" placeholder="Nhập trình duyệt">
+    <button onclick="checkBrowser()">Kiểm tra</button>
+    <p id="result1"></p>
+    <br>
+    <h2>Bài2:Nhập số để kiểm tra</h2>
+    <label for="numberInput">Nhập số:</label>
+    <input type="number" id="numberInput" placeholder="Nhập số">
+    <button onclick="checkNumber()">Kiểm tra</button>
+    <p id="result2"></p>
+    <br>
+    <h2>Bài 3: Nhập số để kiểm tra</h2>
+    <label for="numberInput">Nhập số:</label>
+    <input type="number" id="numberInput" placeholder="Nhập số">
+    <button onclick="checkNumber2()">Kiểm tra</button>
+    <p id="result3"></p>
+    <script>
+        function checkBrowser() {
+            let browser = document.getElementById("browserInput").value.trim();
+            let message = '';
+
+            switch (browser) {
+                case 'Edge':
+                    message = "You've got the Edge!";
+                    break;
+                case 'Chrome':
+                case 'Firefox':
+                case 'Safari':
+                case 'Opera':
+                    message = "Okay, we support these browsers too!";
+                    break;
+                default:
+                    message = "We hope that this page looks okay!";
+            }
+
+            document.getElementById("result1").textContent = message;
+        }
+        function checkNumber() {
+            let a = parseInt(document.getElementById("numberInput").value);
+            let message = '';
+
+            switch (a) {
+                case 0:
+                    message = '0';
+                    break;
+                case 1:
+                    message = '1';
+                    break;
+                case 2:
+                case 3:
+                    message = '2,3';
+                    break;
+                default:
+                    message = 'Không thuộc phạm vi kiểm tra.';
+            }
+
+            document.getElementById("result2").textContent = message;
+        }
+        function checkNumber2() {
+            let num = parseFloat(document.getElementById("numberInput").value);
+            let message = '';
+
+            if (num > 0) {
+                message = '1';
+            } else if (num < 0) {
+                message = '-1';
+            } else {
+                message = '0';
+            }
+
+            document.getElementById("result3").textContent = "Kết quả: " + message;
+        }
+    </script>
+</body>
+</html>
